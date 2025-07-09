@@ -90,9 +90,6 @@ main {
         <li class="nav-item"><a class="nav-link" href="/"><i class="fa-solid fa-house"></i> Home</a></li>
         {% if user.is_authenticated %}
           <li class="nav-item"><a class="nav-link" href="/quizzes/"><i class="fa-solid fa-book-open"></i> Quizzes</a></li>
-           <li class="nav-item">
-      <a class="nav-link" href="/interview-resources/"><i class="fa-solid fa-comments"></i> Interview Resources</a>
-    </li>
         <li class="nav-item"><a class="nav-link" href="/dashboard/"><i class="fa-solid fa-chart-simple"></i> Dashboard</a></li>
           <li class="nav-item"><a class="nav-link" href="/logout/"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
         {% else %}
