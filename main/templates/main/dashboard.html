@@ -1,0 +1,55 @@
+
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Welcome, {{ user.username }}</h2>
+
+  <!-- Performance Summary -->
+  <div class="row text-center mb-4">
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <h5>Total Quizzes</h5>
+        <h3>{{ total_quizzes }}</h3>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <h5>Avg Score</h5>
+        <h3>{{ avg_score }}%</h3>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-sm p-3">
+        <h5>Correct Rate</h5>
+        <h3>{{ accuracy }}%</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weak Topics -->
+  {% if weak_topics %}
+  <div class="card mb-4 p-3 shadow-sm">
+    <h5 class="text-danger"> Improve These Topics:</h5>
+    <ul>
+      {% for topic in weak_topics %}
+        <li>{{ topic.name }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <!-- Recommended Quizzes -->
+  <div class="card p-3 shadow-sm mb-5">
+    <h5 class="mb-3"> Recommended Quizzes</h5>
+    <ul>
+      {% for topic in recommended %}
+        <li><a href="{% url 'quiz_questions' topic.id %}">{{ topic.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="text-center">
+    <a href="{% url 'quiz_list' %}" class="btn btn-primary">Take a New Quiz</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">📊 Admin Dashboard</h2>
+
+  <div class="row g-4 text-center">
+    <div class="col-md-3">
+      <div class="card shadow p-3">
+        <h5>👥 Total Users</h5>
+        <h3>{{ total_users }}</h3>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow p-3">
+        <h5>📚 Quiz Topics</h5>
+        <h3>{{ total_topics }}</h3>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow p-3">
+        <h5>❓ Questions</h5>
+        <h3>{{ total_questions }}</h3>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow p-3">
+        <h5>✅ Quiz Attempts</h5>
+        <h3>{{ total_attempts }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-5 text-center">
+    <a href="/admin/" class="btn btn-outline-dark me-3">Go to Django Admin</a>
+    <a href="{% url 'add_question' %}" class="btn btn-primary">Add New Question</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Divider -->
+<hr class="my-5">
+<div class="container">
+  <h2 class="mb-4 text-center text-primary">Exam Preparation Resources</h2>
+  <div class="row g-4">
+    {% for res in exam_resources %}
+    <div class="col-md-6">
+      <div class="card p-3 shadow-sm">
+        <h5 class="mb-2">{{ res.subject }}</h5>
+        <a href="{{ res.url }}" target="_blank" class="d-block mb-1">{{ res.title }}</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Divider -->
+<hr class="my-5">
+<div class="container">
+  <h2 class="mb-4 text-center text-success">Interview Preparation Resources</h2>
+  <div class="row g-4">
+    {% for res in interview_resources %}
+    <div class="col-md-6">
+      <div class="card p-3 shadow-sm">
+        <h5 class="mb-2">{{ res.subject }}</h5>
+        <a href="{{ res.url }}" target="_blank" class="d-block mb-1">{{ res.title }}</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

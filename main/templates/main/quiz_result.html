@@ -1,0 +1,40 @@
+
+{% extends 'main/base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">{{ topic.name }} - Quiz Result</h2>
+  
+  <!-- Score Display -->
+  <div class="text-center">
+    <h4 class="mb-3">You scored <strong>{{ score }}</strong> out of <strong>{{ total }}</strong></h4>
+    
+    <!-- Button to show/hide answer review -->
+    <a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#reviewAnswers" role="button" aria-expanded="false" aria-controls="reviewAnswers">
+      Review Your Answers
+    </a>
+  </div>
+
+  <!-- Collapsible Review Section -->
+  <div class="collapse mt-4" id="reviewAnswers">
+    <h4 class="mb-3">Answer Review</h4>
+    {% for item in results %}
+      <div class="mb-4">
+        <h5>{{ forloop.counter }}. {{ item.question }}</h5>
+        <p>
+          <strong>Your Answer:</strong> 
+          <span class="{% if item.is_correct %}text-success{% else %}text-danger{% endif %}">
+            {{ item.selected }}
+          </span>
+        </p>
+        {% if not item.is_correct %}
+          <p><strong>Correct Answer:</strong> <span class="text-success">{{ item.correct }}</span></p>
+        {% endif %}
+      </div>
+      <hr>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Bootstrap Bundle (for collapse toggle) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
