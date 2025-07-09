@@ -36,19 +36,6 @@ Prepvault is a Django-based platform that helps students prepare for technical i
 | Deployment   | Render Cloud Hosting               |
 
 ---
-## 📸 Screenshots
-
-### 🔹 Homepage
-![Homepage](
-Screenshot (4).png)
-
-### 🔹 Login Page
-![Login](PrepValut/Screenshot (5).png)
-
-### 🔹 Dashboard
-![Dashboard](PrepValut/Screenshot (6).png)
-
----
 ## 📁 Project Structure
 career_companion/
 │
@@ -72,6 +59,6 @@ career_companion/
 ├── requirements.txt # Python package list
 └── README.md # Project README
 
-yaml
-Copy code
+
+
 
