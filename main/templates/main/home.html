@@ -27,7 +27,7 @@
           {% if user.is_authenticated %}
             <a href="{% url 'quiz_list' %}" class="btn btn-outline-primary btn-sm mt-2">Explore Quizzes</a>
           {% else %}
-            <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-sm mt-2" title="Login Required">Login to Explore</a>
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-sm mt-2" title="Login Required">Explore Quizzes</a>
           {% endif %}
         </div>
       </div>
@@ -41,7 +41,7 @@
           {% if user.is_authenticated %}
             <a href="{% url 'interview_resources' %}" class="btn btn-outline-success btn-sm mt-2">View Resources</a>
           {% else %}
-            <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-sm mt-2" title="Login Required">Login to View</a>
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-sm mt-2" title="Login Required">View Resource</a>
           {% endif %}
         </div>
       </div>
@@ -53,9 +53,10 @@
           <h5>Dashboard</h5>
           <p>Track your quiz scores and interview readiness.</p>
           {% if user.is_authenticated %}
-            <a href="{% url 'dashboard' %}" class="btn btn-outline-warning btn-sm mt-2">Go to Dashboard</a>
+            <a href="{% url 'dashboard' %}" class="btn btn-outline-warning btn-sm mt-2">Dashboard</a>
           {% else %}
-            <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-sm mt-2" title="Login Required">Login to Access</a>
+            <a href="{% url 'login' %}" class="btn btn-outline-secondary btn-sm mt-2" title="Login Required">
+              Dashboard</a>
           {% endif %}
         </div>
       </div>
