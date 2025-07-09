@@ -149,6 +149,7 @@ def admin_dashboard(request):
         'total_attempts': UserQuizResponse.objects.count(),
     }
     return render(request, 'main/admin_dashboard.html', context)
+@login_required
 def interview_resources(request):
     exam_resources = Resource.objects.filter(category='exam')
     interview_resources =Resource.objects.filter(category='interview')
@@ -157,3 +158,10 @@ def interview_resources(request):
         'exam_resources': exam_resources,
         'interview_resources': interview_resources,
     })
+    @login_required
+def quizzes_view(request):
+    return render(request, 'main/quiz_list.html')
+
+@login_required
+def interview_resources_view(request):
+    return render(request, 'main/interview_resources.html')
