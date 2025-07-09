@@ -158,7 +158,7 @@ def interview_resources(request):
         'exam_resources': exam_resources,
         'interview_resources': interview_resources,
     })
-    @login_required
+@login_required
 def quizzes_view(request):
     return render(request, 'main/quiz_list.html')
 
