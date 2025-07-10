@@ -59,6 +59,22 @@ career_companion/
 ├── requirements.txt # Python package list
 └── README.md # Project README
 
+---
+
+## 📸 Screenshots
+
+### 🔹 Homepage  
+![Homepage](main/screenshots/home.png)
+
+### 🔹 Login Page  
+![Login](main/screenshots/login.png)
+
+### 🔹 Dashboard  
+![Dashboard](main/screenshots/dashboard.png)
+
+---
+
+
 
 
 
